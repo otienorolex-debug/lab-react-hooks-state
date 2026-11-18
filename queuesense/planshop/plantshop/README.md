@@ -23,18 +23,12 @@ Leaf & Loom is a small plant-shop catalog for browsing a houseplant collection. 
    ```sh
    npm install
    ```
-2. Start the API server:
-
-   ```sh
-   npm run server
-   ```
-
-3. In a separate terminal, start Vite:
+2. Start the app and API together:
 
    ```sh
    npm run dev
    ```
-4. Open the local URL printed by Vite.
+3. Open the local URL printed by Vite.
 
 The included JSON Server backend listens on port `6001`. Its `GET /plants` endpoint returns the starter catalog in `db.json`; `POST /plants` accepts a JSON object with `name`, `image`, and numeric `price`, then returns and stores the created plant.
 
@@ -42,7 +36,8 @@ The included JSON Server backend listens on port `6001`. Its `GET /plants` endpo
 
 | Command | Description |
 | --- | --- |
-| `npm run dev` | Start the Vite development server. |
+| `npm run dev` | Start the JSON API and Vite development server together. |
+| `npm run server` | Start only the JSON API on port `6001`. |
 | `npm run build` | Create a production build in `dist/`. |
 | `npm run preview` | Preview the production build locally. |
 | `npm run lint` | Run ESLint. |
