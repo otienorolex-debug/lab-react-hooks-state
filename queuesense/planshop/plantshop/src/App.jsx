@@ -5,6 +5,16 @@ import Search from './components/Search.jsx'
 import './App.css'
 
 const PLANTS_API_URL = 'http://localhost:6001/plants'
+const API_CONNECTION_ERROR =
+  'Could not connect to the plants API. Run npm run server in a separate terminal.'
+
+function getRequestErrorMessage(requestError) {
+  if (requestError instanceof TypeError) {
+    return API_CONNECTION_ERROR
+  }
+
+  return requestError.message || 'The plants request failed.'
+}
 
 function App() {
   const [plants, setPlants] = useState([])
@@ -33,7 +43,7 @@ function App() {
         setPlants(plantsFromApi)
       } catch (requestError) {
         if (!controller.signal.aborted) {
-          setError(requestError.message || 'Could not load plants.')
+          setError(getRequestErrorMessage(requestError))
         }
       } finally {
         if (!controller.signal.aborted) {
@@ -67,7 +77,7 @@ function App() {
       setPlants((currentPlants) => [...currentPlants, createdPlant])
       return true
     } catch (requestError) {
-      setError(requestError.message || 'Could not add plant.')
+      setError(getRequestErrorMessage(requestError))
       return false
     }
   }
