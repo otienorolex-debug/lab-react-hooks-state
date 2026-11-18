@@ -12,7 +12,7 @@ function NewPlantForm({ onAddPlant }) {
     const newPlant = {
       name: formData.get('name').trim(),
       image: formData.get('image').trim(),
-      price: Number(formData.get('price')),
+      price: formData.get('price'),
     }
 
     const wasAdded = await onAddPlant(newPlant)
@@ -64,7 +64,7 @@ function NewPlantForm({ onAddPlant }) {
           </span>
         </label>
         <button className="add-button" type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Adding…' : 'Add plant'}
+          {isSubmitting ? 'Adding…' : 'Add Plant'}
           <span aria-hidden="true">↗</span>
         </button>
       </form>

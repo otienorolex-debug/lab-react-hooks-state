@@ -326,10 +326,6 @@
   font-size: 0.8rem;
 }
 
-.plant-price span::before {
-  content: '$';
-}
-
 .stock-button {
   flex: 0 0 auto;
   padding: 0.42rem 0.6rem;

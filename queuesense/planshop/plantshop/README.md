@@ -30,7 +30,7 @@ Leaf & Loom is a small plant-shop catalog for browsing a houseplant collection. 
    ```
 3. Open the local URL printed by Vite.
 
-The included JSON Server backend listens on port `6001`. Its `GET /plants` endpoint returns the starter catalog in `db.json`; `POST /plants` accepts a JSON object with `name`, `image`, and numeric `price`, then returns and stores the created plant.
+The included JSON Server backend listens on port `6001`. Its `GET /plants` endpoint returns the starter catalog in `db.json`. The plant form posts `name`, `image`, and the entered `price` to `POST /plants`, then adds the created plant to the page.
 
 ## Project scripts
 
