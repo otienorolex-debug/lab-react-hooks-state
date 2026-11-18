@@ -15,20 +15,28 @@ Leaf & Loom is a small plant-shop catalog for browsing a houseplant collection. 
 ## Requirements
 
 - Node.js and npm.
-- A plants API available at `http://localhost:6001/plants` with `GET` and `POST` support.
 
 ## Run locally
 
-1. Start the compatible JSON API on port `6001`.
-2. In this directory, install dependencies and start Vite:
+1. In this directory, install dependencies:
 
    ```sh
    npm install
+   ```
+2. Start the API server:
+
+   ```sh
+   npm run server
+   ```
+
+3. In a separate terminal, start Vite:
+
+   ```sh
    npm run dev
    ```
-3. Open the local URL printed by Vite.
+4. Open the local URL printed by Vite.
 
-The API's `GET /plants` endpoint should return an array of plants with `id`, `name`, `image`, and `price` fields. `POST /plants` accepts a JSON object with `name`, `image`, and numeric `price`, then returns the created plant.
+The included JSON Server backend listens on port `6001`. Its `GET /plants` endpoint returns the starter catalog in `db.json`; `POST /plants` accepts a JSON object with `name`, `image`, and numeric `price`, then returns and stores the created plant.
 
 ## Project scripts
 
